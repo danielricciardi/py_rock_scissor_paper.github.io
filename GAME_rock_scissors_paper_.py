@@ -12,13 +12,13 @@ print("# RULES: r for rock // s for scissors // p for paper")
 def gameset():
     # Initial settings
     # Number of matches
-    gameNum = int(input("# Type here the number of matches you'd like to play: "))
+    game_num = int(input("# Type here the number of matches you'd like to play: "))
     # Initial score
-    plWins = 0
-    cpWins = 0
+    player_wins = 0
+    computer_wins = 0
 
     # Rock, Paper, Scissors matches loop
-    for x in range(1, gameNum+1):
+    for x in range(1, game_num+1):
         print(f'# MATCH NUMBER {x} #')                  # Match counter
         player = input("Player choice: ")               # Player choice
         computer = random.choice(["r", "s", "p"])
@@ -27,27 +27,27 @@ def gameset():
         # Win conditions check
         if player == computer:
             print("Pair!")
-            plWins += 0
-            cpWins += 0
+            player_wins += 0
+            computer_wins += 0
         elif player == "r" and computer == "s":
             print("# PLAYER WINS!")
-            plWins += 1
+            player_wins += 1
         elif player == "s" and computer == "p":
             print("# PLAYER WINS!")
-            plWins += 1
+            player_wins += 1
         elif player == "p" and computer == "r":
             print("# PLAYER WINS!")
-            plWins += 1
+            player_wins += 1
         else:
             print("# COMPUTER WINS!")
-            cpWins += 1
+            computer_wins += 1
 
     # Score output
     print("# FINAL SCORE #")
-    print(f'PLAYER: {plWins}, COMPUTER: {cpWins}')
-    if plWins > cpWins:
+    print(f'PLAYER: {player_wins}, COMPUTER: {computer_wins}')
+    if player_wins > computer_wins:
         print("PLAYER WINS!")
-    elif plWins == cpWins:
+    elif player_wins == computer_wins:
         print("DRAW GAME!")
     else:
         print("COMPUTER WINS!")
@@ -58,11 +58,8 @@ def gameset():
         gameset()           # Restart game
     else:
         print("Goodbye!")
-        exit                # Exit game
+        exit()                # Exit game
 
 
 # Game function
 gameset()
-
-
-
